@@ -1,7 +1,14 @@
 import React from 'react';
+import Reg from './Reg';
 // import CountDisplay from './CountDisplay.jsx';
 
 
+
+// function App(props) {
+//     return (
+//         <>
+//          {data.map( (bebras, i) => <Kvadratas key={i} bebras={`${bebras}`} ></Kvadratas>)}
+//         </>
 
 
 
@@ -13,12 +20,12 @@ class RatoVirve extends React.Component {
     render() { 
         return (
             <>
-                <a href="">
+               
 
-        <button className="circle-button" onClick={e => this.props.verevka(e)}>
-           pagalbinis
+        <button className="circle-button" onClick={() => this.props.clickToChangeColor(this.props.color )} style={{backgroundColor:this.props.color}} >
+           {this.props.color}
+           <Reg kluch={this.props.kluch} ></Reg>
         </button>
-                </a>
     
             </>
         )
