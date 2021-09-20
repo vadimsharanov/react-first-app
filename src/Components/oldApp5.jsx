@@ -18,7 +18,11 @@ class App extends React.Component {
 
     }
 
-
+    getId = () => {
+        const oneCircle = JSON.parse(localStorage.getItem("allFigures"))
+        return oneCircle === null? 0 : oneCircle.length
+        
+    }
 
     addFigure = (figure) => {
         const circle = {ID: this.getId() + 1, color:this.state.figureInput, figureType: figure}
@@ -86,11 +90,3 @@ class App extends React.Component {
 }
 
 export default App
-
-
-// rezervas 
-    // getId = () => {
-    //     const oneCircle = JSON.parse(localStorage.getItem("allFigures"))
-    //     return oneCircle === null? 0 : oneCircle.length
-        
-    // }

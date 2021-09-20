@@ -2,22 +2,15 @@ import React from 'react';
 
 class CountDisplay extends React.Component {
     render() { 
-        if (this.props.digit > 30) {
-            return (
-            <>
-            <div className="nice-digit green">
-                {this.props.digit}
-            </div>
-            </>
-
-            )
-        }
+        console.log(this.props.digit)
+    
         return (
-            <>
-            <div className="nice-digit">
-                {this.props.digit}
-            </div>
-            </>
-)}}
+        <>
+        <div className="nice-digit">
+            {this.props.digit}X
+        </div>
+        </>
+)}
+        }
 export default CountDisplay
     

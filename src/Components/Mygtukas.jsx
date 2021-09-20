@@ -1,49 +1,57 @@
-import React from 'react';
-import CountDisplay from './CountDisplay.jsx';
-import Mygtukas2 from './Mygtukas2.jsx';
+// import React from 'react';
+// import CountDisplay from './CountDisplay.jsx';
+// // import Mygtukas2 from './Mygtukas2.jsx';
 
 
 
 
 
-class Mygtukas extends React.Component {
-    constructor() {
-        super()
-        this.state = {counter:0}
+// class Mygtukas extends React.Component {
+//     constructor() {
+//         super()
+//         this.state = {x:0}
+//     }
+//     set3X = () => {
+//         return x+3
+//     }
+//     // const [x,setCount] = useState(3);
+//     // const x = 3;
+//     // const set3X = set3X
+//     activateLasers = (e) => {
+//         // console.log("cho");
+//         // e.preventDefault()
+//         // e.stopPropagation()
+//         console.log(this.state.x);
+//         this.setState(((state, props) => ({x: state.x += 3})
+//         ))
+//         localStorage.setItem("paspaudimas", (this.state.x + 3))
+      
+//     }
+//     componentDidMount() {
+//         console.log(this.state.x);
+//         const duomenys = JSON.parse(localStorage.getItem("paspaudimas"))
+//         // if (duomenys === null) {
+//         //     return ;
+//         // }
+//         this.setState(((state, props) => ({x: duomenys+3})
+//         ))
 
-    }
-    activateLasers = (e) => {
-        console.log("cho");
-        e.preventDefault()
-        e.stopPropagation()
-        this.setState(((state, props) => ({counter: state.counter + props.amount})
-        ))}
+//     }
 
-    valio = (e) => {
-        console.log("valio", this.props.tekstas);
-    }
     
-    // componentDidMount() {}
+//     render() { 
+//         return (
+//             <>
+//         <button className="baton" id="baton" onClick={this.activateLasers} >
+//            {this.props.tekstas} 
+//         </button>      
+//         <div>
+//         {this.state.x}    
+//         </div>          
+            
+//                  </>
+//         )
+// }
+// }
 
-    // componentWillUnmount() {clearInterval(this.timerID); }
-    
-    render() { 
-        return (
-            <>
-            <div className="bin" onClick={(e) => this.valio(e)} >
-                <a href="">
-
-        <button className="baton" id="baton" onClick={ (e) =>  this.activateLasers(e)} >
-           {this.props.tekstas}
-        </button>
-                </a>
-                <CountDisplay digit={this.state.counter}>
-                </CountDisplay>
-                <Mygtukas2 virve={this.activateLasers} ></Mygtukas2>
-            </div>
-            </>
-        )
-}
-}
-
-export default Mygtukas
+// export default Mygtukas
