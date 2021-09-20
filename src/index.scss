@@ -1,181 +1,126 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: pink;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-
-.kvadratas {
-  
-  width: 500px;
-  padding:0;
-  display:flex;
-  flex-direction: row-reverse;
-  height: 500px;
-  background-color: aqua;
-  margin: 40px;
-  margin-left: 400px;
-  span {
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-  }
-  &.br {
-    background-color: black;
-  }
-}
-
-
-.baton {
-  margin:20px;
-  padding: 10px;
-  font-size: 15px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #04AA6D;
-  border: none;
-  border-radius: 5px;
-}
-.container {
-  display:flex;
-  flex-direction: column;
-}
-  .baton:hover {
-    background-color:papayawhip;
-    color: rebeccapurple;
-  }
-  .baton:active {
-    background-color:gray
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 300px;
+    margin-top: 30px;
+    // max-width: 700px;
   }
   
-.hover{
-  background-color: yellow;
-}
-
-.nice-digit {
- 
-  font-size: 20px;
-  text-align: center  ;
-  background-color: darkorange;
-  border-radius: 10px;
-  &.green {
-    background-color: black;
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
   }
-}
-
-.bin {
-  // background-color: yellow;
-  border: 2px solid orange;
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-} 
-
-.greenCircle {
-  width: 600px;
-  height: 600px;
-  background-color: green;  
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 25px;
-  .circle-button {
-    background-color: yellow;
-    font-size: 40px;
-    margin:10px; 
-    padding: 40px;
-    position: relative;
-    .reg {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      right: 50%;
-      font-size: 15px;
-    }
-
+  .container {
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-column-start: 3;
+    width: 70%;
+     position: absolute;
   }
-
-  input {
-    // position: absolute;
-    // top: 30px;
-    font-size: 35px;
+  .baton {
+    margin:20px;
+    padding: 10px;
+    font-size: 15px;
     text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 5px;
+
   }
-}
-.circle-button:hover {
-  background-color: hotpink;
+  input {
+    width: 60%;
+    
+  }
+
+.kruzhok {
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
 }
 
-.small-circle {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.button-circle {
+  margin-top: 70px;
+  margin-left: 20px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  color:black;
+  background: violet;
+  cursor: pointer;
   position: relative;
+  z-index: 0;
+  border-radius: 10px;
 
 }
-
-.color-button {
-  background-color: yellow;
-  font-size: 20px;
-  margin:10px; 
-  padding: 20px;
+.button-circle:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   position: absolute;
-  top: 65px;
-
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
 }
-.color-button-nd {
-  display: flex;
-  align-items: flex-end;
-  background-color: red;
-  bottom: 0;
-  flex-direction: column;
-  font-size: 20px;
+
+.button-circle:active {
+  color: violet
 }
 
-.delete-button {
+.button-circle:active:after {
+  background: transparent;
+}
+
+.button-circle:hover:before {
+  opacity: 1;
+}
+
+.button-circle:after {
+  z-index: -1;
+  content: '';
   position: absolute;
-  top: 35px;
-
+  width: 100%;
+  height: 100%;
+  background:orange;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
-// .circle-button 
 
-// @media (prefers-reduced-motion: no-preference) {
-//   .greenCircle {
-//     animation: greenCircle infinite 20s linear;
-//   }
-// }
-
-// @keyframes greenCircle {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
 
 
-/* The element to apply the animation to */
+
+.input-circle {
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 25px;
+  font-size: 20px;
+  padding-left: 5px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+    .container > .vaizdelis {
+     grid-column-start: 3;
+    }
+  }

@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: pink;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+.kvadratas {
+  
+  width: 500px;
+  padding:0;
+  display:flex;
+  flex-direction: row-reverse;
+  height: 500px;
+  background-color: aqua;
+  margin: 40px;
+  margin-left: 400px;
+  span {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  &.br {
+    background-color: black;
+  }
+}
+
+
+.baton {
+  margin:20px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+}
+.container {
+  display:flex;
+  flex-direction: column;
+}
+  .baton:hover {
+    background-color:papayawhip;
+    color: rebeccapurple;
+  }
+  .baton:active {
+    background-color:gray
+  }
+  
+.hover{
+  background-color: yellow;
+}
+
+.nice-digit {
+ 
+  font-size: 20px;
+  text-align: center  ;
+  background-color: darkorange;
+  border-radius: 10px;
+  &.green {
+    background-color: black;
+  }
+}
+
+.bin {
+  // background-color: yellow;
+  border: 2px solid orange;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+} 
+
+.greenCircle {
+  width: 600px;
+  height: 600px;
+  background-color: green;  
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  .circle-button {
+    background-color: yellow;
+    font-size: 40px;
+    margin:10px; 
+    padding: 40px;
+    position: relative;
+    .reg {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      right: 50%;
+      font-size: 15px;
+    }
+
+  }
+
+  input {
+    // position: absolute;
+    // top: 30px;
+    font-size: 35px;
+    text-align: center;
+  }
+}
+.circle-button:hover {
+  background-color: hotpink;
+}
+
+.small-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+
+.color-button {
+  background-color: yellow;
+  font-size: 20px;
+  margin:10px; 
+  padding: 20px;
+  position: absolute;
+  top: 65px;
+
+}
+.color-button-nd {
+  display: flex;
+  align-items: flex-end;
+  background-color: red;
+  bottom: 0;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.delete-button {
+  position: absolute;
+  top: 35px;
+
+}
+.kruzhok {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+// .circle-button 
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .greenCircle {
+//     animation: greenCircle infinite 20s linear;
+//   }
+// }
+
+// @keyframes greenCircle {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
+
+
+/* The element to apply the animation to */
