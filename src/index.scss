@@ -16,7 +16,7 @@ body {
   }
   .container {
     display: grid;
-    gap:10px;
+    gap:90px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-column-start: 3;
     width: 70%;
