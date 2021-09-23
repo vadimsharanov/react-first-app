@@ -132,23 +132,34 @@ body {
 }
 
 @media (max-width: 640px) {
-    .container > .vaizdelis {
-     grid-column-start: 3;
+    .container > .data-container {
+    //  grid-column-start: 2;
+     margin:0;
+     width: 100%;
+    }
+  }
+  @media (min-width: 1000px) {
+    .container {
+      margin-left: 100px;
+     grid-column-start: 0;
+  //   //  margin:0;
+  //    width: 100%;
     }
   }
 
   .container {
     display: grid;
-    gap:90px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-column-start: auto;
+    gap:30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-start: 3;
     width: 80%;
-     position: absolute;
-     left: 200px;
-     border:2px solid black;
+    position: absolute;
+    border:2px solid black;
+    //  margin-left: 100px;
   }
 
   .data-container {
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     border: brown 1px solid;
@@ -158,11 +169,71 @@ body {
     align-items: center;
     position: relative;
     font-size: 18px;
+    transition: transform .2s; /* Animation */
+    
   }
+  .data-container:hover{
+    background-color: blanchedalmond;
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
 
   .data-index {
     padding:15px;
+    margin-bottom: 10px;
     font-weight: 700;
     font-size: 25px;
     text-align: center;
   }
+
+  .status {
+    position: absolute;
+    display: flex;
+    margin-top: 20px;
+    right: 0;
+    bottom: 0;
+    background-color: greenyellow;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: none;
+  }
+  .data-container:hover .status{
+    display: flex;
+}
+
+  .user {
+    font-size: 20px;
+    text-decoration: underline;
+    padding:10px;
+    padding-top: 0;
+    margin-bottom: 10px; 
+  }
+  .author {
+    text-decoration: underline;
+    position: relative;
+    bottom: 0;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .knygos-img {
+    height: 50%;
+    width: 60%;
+    margin-bottom: 40px;
+  }
+  
+  .price {
+    position: absolute;
+    bottom: 5px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .buy-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
