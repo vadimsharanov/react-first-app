@@ -1,23 +1,37 @@
-import { Link,Switch, Route } from "react-router-dom"
+import { Link,Switch, Route } from "react-router-dom";
+import TheWall from "./TheWall";
+
+
 
 function LinkuMiskas() {
     return (
         <>
             <div>
                 <nav>
-                    <Link to={"home"}><h4>AEAEAEAE</h4></Link>
-                    <Link to={"not-so-home"}><h4>ae11111111</h4></Link>
-                    <Link to={"maybe-home"}><h4>ae333333</h4></Link>
+                    <Link to={"home"}><h4>Home!</h4></Link>
+                    <Link to={"the-street"}><h4>The Street</h4></Link>
+                    <Link to={"the-wall"}><h4>The Wall </h4></Link>
+                    <div>
+                    <Link to={"the-wall1"}><h4>The Wall 1</h4></Link>
+                    <Link to={"the-wall2"}><h4>The Wall 2</h4></Link>
+                    <Link to={"the-wall3"}><h4>The Wall 3</h4></Link>
+                    <Link to={"the-wall4"}><h4>The Wall 4</h4></Link>
+                    <Link to={"the-wall5"}><h4>The Wall 5</h4></Link>
+                    </div>
                 </nav>
                 <Switch>
                     <Route path={'/home'}>
                         <h1>Home</h1>
                     </Route>
-                    <Route path={'/not-so-home'}>
-                        <h1>not so home</h1>
+                    <Route path={'/the-street'}>
+                        <h1>the-street</h1>
                     </Route>
-                    <Route path={'/maybe-home'}>
-                        <h1>maybe home</h1>
+                    <Route path={'/the-wall'}>
+                        <h1>the wall</h1>
+                    </Route>
+
+                    <Route path={'/:theWall'} children={<TheWall></TheWall>}>
+                    
                     </Route>
                 </Switch>
             </div>

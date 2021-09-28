@@ -1,13 +1,12 @@
+import LinkuMiskas from "./LinkuMiskas"
 import { BrowserRouter as Router } from "react-router-dom"
-import Zverys from "./Zverys"
-
-
 
 
 function App(props) {
     return (
         <Router>
-        <Zverys></Zverys>
+
+        <LinkuMiskas></LinkuMiskas>
         </Router>
     )
 }
