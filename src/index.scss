@@ -262,3 +262,25 @@ body {
     100% { transform: rotate(360deg); }
   }
   
+  .field {  
+    max-width: 300px;
+    display: flex;
+    // flex-direction: column;
+    margin: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    // transition: transform .2s; /* Animation */
+    padding: 10px;
+    span {
+      font-size: 45px;
+      font-weight: 700;
+      color: chartreuse;
+      padding: 20px;
+    }
+    button {
+      padding: 20px;
+    }
+  }

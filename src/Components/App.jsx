@@ -1,69 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
-import TodoRender from './TodoRender';
-import BookOne from './BookOne.jsx';
-    // https://in3.dev/knygos/
-    // Gražiais su CSS padaryti prekių sąrašą. Pridėti mygtuką pirkti.
+import react, { createContext } from "react"
+import { useState } from "react"
+import Field from "./Field"
 
-function App(props) {
-    const [data, setData] = useState([])
-    
-    useEffect(() => {
-        getUser()
+const letters = ["L","b","g","w","m","u","Z"]
+
+export const themeContext = createContext({color: "black"})
+
+
+function App() {
+    const [style, setStyle] = useState( {
+        color: "black"
+    })
+
+    const changeTheme = (param) => {
+        console.log("vvv");
+        let theme
+        // const themes = {
+        //     1:"red",
+        //     2:"blue",
+        //     3:"yellow"
+        // }
+        // return themes[theme]
         
-    },[])
-    async function getUser() {
-        try {
-          const response = await axios.get('https://in3.dev/knygos/');
-            response.data = response.data.sort((a,b)=> a.id - b.id)
-            setData(response.data)
-            console.log(response.data);
-            
-            
-        } catch (error) {
-          console.error(error);
+
+        if ( param ===1 ) {
+            theme = {
+                color:"red"
+            }
+            setStyle(theme)
         }
-      }
-
-      const buyBook = function(e) {
-            const rezerv = data.slice();
-            let findData = rezerv.find(item => e === item.id)
-            rezerv.splice((rezerv.indexOf(findData)),1)
-            setData(rezerv)
-      }
-      const changeStatus = function(e) {
-        const rezerv = data.slice();
-        let findData = rezerv.find(item => e === item.id)
-        findData.completed = !findData.completed
-        setData(rezerv)
-  }
-    const trial = function() {
-      console.log('hello');
+        if ( param ===2 ) {
+            theme = {
+                color:"blue"
+            }
+            setStyle(theme)
+            
+        }
+        if ( param ===3 ) {
+            theme = {
+                color:"yellow"
+            }
+            setStyle(theme)
+        }
     }
-console.log(data)
- 
-    return (
-        <Router>
-          <Switch>
-            <Route path={'/:bookId'}>
-              <BookOne  data={data} buybook={() => trial()} ></BookOne>
-            </Route>
-
-
-            <Route path={'/'}>
-                <div className="container">
-                {data.map((oneData,i) =><TodoRender
-                index={data.indexOf(oneData)}
-                data={oneData}
-                buybook={() => buyBook(oneData.id)}
-                ></TodoRender> )}
-                    </div>
-              </Route>        
-            </Switch>          
-          </Router>
-   
-)
+    console.log(style);
+    return (<>
+    <themeContext.Provider value={style}>
+        <Field letters={letters} ></Field>
+        <button onClick={() => changeTheme(1)} className="baton" >Theme 1 </button>
+        <button onClick={() => changeTheme(2)} className="baton" >Theme 2 </button>
+        <button onClick={() => changeTheme(3)} className="baton" >Theme 3 </button>
+    </themeContext.Provider>
+     
+    </>)
 }
 
 export default App
